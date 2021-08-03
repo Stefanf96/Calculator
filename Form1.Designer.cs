@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Calculator
 {
     partial class Form1
@@ -41,12 +43,18 @@ namespace Calculator
             this.two = new System.Windows.Forms.Button();
             this.three = new System.Windows.Forms.Button();
             this.zero = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.multiply = new System.Windows.Forms.Button();
+            this.divide = new System.Windows.Forms.Button();
+            this.equals = new System.Windows.Forms.Button();
+            this.clearEntirelyButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.resultBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(752, 201);
+            this.add.Location = new System.Drawing.Point(681, 201);
             this.add.Margin = new System.Windows.Forms.Padding(4);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(129, 80);
@@ -57,7 +65,7 @@ namespace Calculator
             // 
             // subtract
             // 
-            this.subtract.Location = new System.Drawing.Point(752, 290);
+            this.subtract.Location = new System.Drawing.Point(681, 290);
             this.subtract.Margin = new System.Windows.Forms.Padding(4);
             this.subtract.Name = "subtract";
             this.subtract.Size = new System.Drawing.Size(129, 80);
@@ -68,7 +76,7 @@ namespace Calculator
             // 
             // seven
             // 
-            this.seven.Location = new System.Drawing.Point(110, 201);
+            this.seven.Location = new System.Drawing.Point(72, 201);
             this.seven.Margin = new System.Windows.Forms.Padding(4);
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(139, 87);
@@ -79,7 +87,7 @@ namespace Calculator
             // 
             // eight
             // 
-            this.eight.Location = new System.Drawing.Point(247, 201);
+            this.eight.Location = new System.Drawing.Point(209, 201);
             this.eight.Margin = new System.Windows.Forms.Padding(4);
             this.eight.Name = "eight";
             this.eight.Size = new System.Drawing.Size(139, 87);
@@ -90,7 +98,7 @@ namespace Calculator
             // 
             // nine
             // 
-            this.nine.Location = new System.Drawing.Point(385, 201);
+            this.nine.Location = new System.Drawing.Point(347, 201);
             this.nine.Margin = new System.Windows.Forms.Padding(4);
             this.nine.Name = "nine";
             this.nine.Size = new System.Drawing.Size(139, 87);
@@ -101,7 +109,7 @@ namespace Calculator
             // 
             // four
             // 
-            this.four.Location = new System.Drawing.Point(110, 290);
+            this.four.Location = new System.Drawing.Point(72, 290);
             this.four.Margin = new System.Windows.Forms.Padding(4);
             this.four.Name = "four";
             this.four.Size = new System.Drawing.Size(139, 87);
@@ -112,7 +120,7 @@ namespace Calculator
             // 
             // five
             // 
-            this.five.Location = new System.Drawing.Point(247, 290);
+            this.five.Location = new System.Drawing.Point(209, 290);
             this.five.Margin = new System.Windows.Forms.Padding(4);
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(139, 87);
@@ -123,7 +131,7 @@ namespace Calculator
             // 
             // six
             // 
-            this.six.Location = new System.Drawing.Point(385, 290);
+            this.six.Location = new System.Drawing.Point(347, 290);
             this.six.Margin = new System.Windows.Forms.Padding(4);
             this.six.Name = "six";
             this.six.Size = new System.Drawing.Size(139, 87);
@@ -134,7 +142,7 @@ namespace Calculator
             // 
             // one
             // 
-            this.one.Location = new System.Drawing.Point(110, 378);
+            this.one.Location = new System.Drawing.Point(72, 378);
             this.one.Margin = new System.Windows.Forms.Padding(4);
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(139, 87);
@@ -145,7 +153,7 @@ namespace Calculator
             // 
             // two
             // 
-            this.two.Location = new System.Drawing.Point(247, 378);
+            this.two.Location = new System.Drawing.Point(209, 378);
             this.two.Margin = new System.Windows.Forms.Padding(4);
             this.two.Name = "two";
             this.two.Size = new System.Drawing.Size(139, 87);
@@ -156,7 +164,7 @@ namespace Calculator
             // 
             // three
             // 
-            this.three.Location = new System.Drawing.Point(385, 378);
+            this.three.Location = new System.Drawing.Point(347, 378);
             this.three.Margin = new System.Windows.Forms.Padding(4);
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(139, 87);
@@ -167,7 +175,7 @@ namespace Calculator
             // 
             // zero
             // 
-            this.zero.Location = new System.Drawing.Point(247, 466);
+            this.zero.Location = new System.Drawing.Point(209, 466);
             this.zero.Margin = new System.Windows.Forms.Padding(4);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(139, 87);
@@ -176,20 +184,89 @@ namespace Calculator
             this.zero.UseVisualStyleBackColor = true;
             this.zero.Click += new System.EventHandler(this.zero_Click);
             // 
-            // panel1
+            // multiply
             // 
-            this.panel1.Location = new System.Drawing.Point(110, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 125);
-            this.panel1.TabIndex = 12;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.multiply.Location = new System.Drawing.Point(544, 290);
+            this.multiply.Margin = new System.Windows.Forms.Padding(4);
+            this.multiply.Name = "multiply";
+            this.multiply.Size = new System.Drawing.Size(129, 80);
+            this.multiply.TabIndex = 14;
+            this.multiply.Text = "*";
+            this.multiply.UseVisualStyleBackColor = true;
+            this.multiply.Click += new System.EventHandler(this.multiply_Click);
+            // 
+            // divide
+            // 
+            this.divide.Location = new System.Drawing.Point(544, 201);
+            this.divide.Margin = new System.Windows.Forms.Padding(4);
+            this.divide.Name = "divide";
+            this.divide.Size = new System.Drawing.Size(129, 80);
+            this.divide.TabIndex = 13;
+            this.divide.Text = "/";
+            this.divide.UseVisualStyleBackColor = true;
+            this.divide.Click += new System.EventHandler(this.divide_Click);
+            // 
+            // equals
+            // 
+            this.equals.Location = new System.Drawing.Point(544, 385);
+            this.equals.Margin = new System.Windows.Forms.Padding(4);
+            this.equals.Name = "equals";
+            this.equals.Size = new System.Drawing.Size(266, 80);
+            this.equals.TabIndex = 15;
+            this.equals.Text = "=";
+            this.equals.UseVisualStyleBackColor = true;
+            // 
+            // clearEntirelyButton
+            // 
+            this.clearEntirelyButton.Location = new System.Drawing.Point(818, 290);
+            this.clearEntirelyButton.Margin = new System.Windows.Forms.Padding(4);
+            this.clearEntirelyButton.Name = "clearEntirelyButton";
+            this.clearEntirelyButton.Size = new System.Drawing.Size(129, 80);
+            this.clearEntirelyButton.TabIndex = 17;
+            this.clearEntirelyButton.Text = "CE";
+            this.clearEntirelyButton.UseVisualStyleBackColor = true;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(818, 201);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(4);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(129, 80);
+            this.clearButton.TabIndex = 16;
+            this.clearButton.Text = "C";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // resultBox
+            // 
+            this.resultBox.Location = new System.Drawing.Point(72, 98);
+            this.resultBox.Name = "resultBox";
+            this.resultBox.Size = new System.Drawing.Size(875, 34);
+            this.resultBox.TabIndex = 18;
+            this.resultBox.Text = "0";
+            this.resultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 28);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Result";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 577);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.resultBox);
+            this.Controls.Add(this.clearEntirelyButton);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.equals);
+            this.Controls.Add(this.multiply);
+            this.Controls.Add(this.divide);
             this.Controls.Add(this.zero);
             this.Controls.Add(this.three);
             this.Controls.Add(this.two);
@@ -204,12 +281,17 @@ namespace Calculator
             this.Controls.Add(this.add);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
+
+        
 
         #endregion
 
@@ -225,7 +307,13 @@ namespace Calculator
         private System.Windows.Forms.Button two;
         private System.Windows.Forms.Button three;
         private System.Windows.Forms.Button zero;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button multiply;
+        private System.Windows.Forms.Button divide;
+        private System.Windows.Forms.Button equals;
+        private System.Windows.Forms.Button clearEntirelyButton;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.TextBox resultBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 
