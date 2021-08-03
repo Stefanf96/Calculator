@@ -225,6 +225,7 @@ namespace Calculator
             this.clearEntirelyButton.TabIndex = 17;
             this.clearEntirelyButton.Text = "CE";
             this.clearEntirelyButton.UseVisualStyleBackColor = true;
+            this.clearEntirelyButton.Click += new System.EventHandler(this.clearEntirelyButton_Click);
             // 
             // clearButton
             // 
@@ -280,18 +281,18 @@ namespace Calculator
             this.Controls.Add(this.subtract);
             this.Controls.Add(this.add);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        
 
         #endregion
 
